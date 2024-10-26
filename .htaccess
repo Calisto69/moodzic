@@ -1,0 +1,18 @@
+Header edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure;SameSite=None
+
+Options -Indexes
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* index.php/$0 [PT,L]
+
+<Files "*.json">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<Files "*.lock">
+    Order Deny,Allow
+    Deny from all
+</Files>
