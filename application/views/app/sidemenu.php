@@ -42,7 +42,7 @@
             <ul class="nav_downloads">
                 
                 
-                <li><a href="favourite.html" title="Favourites">
+                <li><a href="<?= base_url('favourite')?>" title="Favourites">
 				<span class="nav_icon">
 					<span class="icon icon_favourite"></span>
 				</span>

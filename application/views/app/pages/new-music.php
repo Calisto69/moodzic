@@ -14,11 +14,11 @@
 
             <div class="add-div">
                 <form action="<?= base_url('newmusics/upload')?>" method="POST" enctype="multipart/form-data">
-                <label for="fname"><font color='white'>Song Name</font></label>
-                <input type="text" name="name" class="add-input" placeholder="Name.." required>
+                <label for="fname"><font color='white'>Song Title </font></label>
+                <input type="text" name="name" class="add-input" placeholder="Title.." required>
 
-                <label for="lname"><font color='white'>Singer</font></label>
-                <input type="text" id="lname" name="singer" class="add-input" placeholder="Singer..">
+                <label for="lname"><font color='white'>Artists</font></label>
+                <input type="text" id="lname" name="singer" class="add-input" placeholder="Artists..">
 
                 <label for="country"><font color='white'>Category</font></label>
                 <select id="category" name="category" class="add-input">
