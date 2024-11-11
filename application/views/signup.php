@@ -33,6 +33,11 @@
 								<!--begin::Input group=-->
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
+									<input type="text" placeholder="Fullname" name="fullname" autocomplete="off" class="form-control" />
+									<!--end::Email-->
+								</div>
+								<div class="fv-row mb-8">
+									<!--begin::Email-->
 									<input type="text" placeholder="Username" name="username" autocomplete="off" class="form-control" />
 									<!--end::Email-->
 								</div>

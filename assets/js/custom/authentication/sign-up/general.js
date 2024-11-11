@@ -77,6 +77,13 @@ var KTSignupGeneral = function() {
                                 message: "The username is required"
                             }
                         }
+                    },
+                    fullname: {
+                        validators: {
+                            notEmpty: {
+                                message: "The fullname is required"
+                            }
+                        }
                     }
                 },
                 plugins: {
@@ -177,6 +184,13 @@ var KTSignupGeneral = function() {
                         validators: {
                             notEmpty: {
                                 message: "You must accept the terms and conditions"
+                            }
+                        }
+                    },
+                    fullname: {
+                        validators: {
+                            notEmpty: {
+                                message: "The fullname is required"
                             }
                         }
                     }

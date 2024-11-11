@@ -18,9 +18,11 @@ class Signup extends CI_Controller {
 
 		$insert = array(
 			'username'  => $post['username'],
-			'password' 	=> $post['password'],
+			'password' 	=> md5($post['password']),
 			'email' 	=> $post['email'],
-			'create_dt' => current_dt()
+			'create_dt' => current_dt(),
+			'role'      => '1',
+			'fullname'  => $post['fullname']
 		);
 
 		$do_insert = insert_any_table($insert, 'users');

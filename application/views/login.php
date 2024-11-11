@@ -18,7 +18,9 @@
 					<!--begin::Wrapper-->
 					<div class="card card-flush w-lg-500px py-16 border-0" style="background-image: url('<?php echo base_url(); ?>/assets/media/auth/reg-pic.png');">
 						<div class="card-body py-15 py-lg-0">
-							<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" data-kt-redirect-url="authentication/layouts/corporate/sign-in.html" action="#">
+
+
+							<form class="form w-100" action="<?= base_url('login');?>" method="POST">
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
@@ -30,15 +32,36 @@
 									<img alt="Logo" src="<?php echo base_url(); ?>/assets/media/auth/music-logo-2.png" width="120px;" />
 								</div>
 								<!--end::Separator-->
+
+
+								<?
+								$info = $this->session->flashdata('error');
+						        if(!empty($info)){ ?>
+								<!--begin::Alert-->
+								<div class="alert alert-danger d-flex align-items-center p-5">
+								   
+								    <!--begin::Wrapper-->
+								    <div class="d-flex flex-column">
+								        <!--begin::Content-->
+								        <span><?php echo $info; ?></span>
+								        <!--end::Content-->
+								    </div>
+								    <!--end::Wrapper-->
+								</div>
+								<!--end::Alert-->
+
+								<? } ?>
+
+
 								<!--begin::Input group=-->
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="text" placeholder="Username" name="username" autocomplete="off" class="form-control" />
+									<input type="text" required placeholder="Username" name="username" autocomplete="off" class="form-control" />
 									<!--end::Email-->
 								</div>
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="password" placeholder="Password" name="password" autocomplete="off" class="form-control" />
+									<input type="password" required placeholder="Password" name="password" autocomplete="off" class="form-control" />
 									<!--end::Email-->
 								</div>
 
