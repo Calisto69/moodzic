@@ -3,15 +3,43 @@
         <div class="album_inner_list">
             <div class="slider_heading_wrap marger_bottom30">
                 <div class="slider_cheading">
-                    <h4 class="cheading_title">Your Favourites &nbsp;</h4>
+                    <h4 class="cheading_title">Add New Music &nbsp;</h4>
                 </div>
             </div>
-            
-            
+
+           <!--  <form action="upload.php" method="POST" enctype="multipart/form-data">
+                <label for="musicFile">Choose a music file (MP3 only):</label>
+                <input type="file" name="musicFile" id="musicFile" accept=".mp3" required>
+            </form> -->
+
+            <div class="add-div">
+                <form action="<?= base_url('newmusics/upload')?>" method="POST" enctype="multipart/form-data">
+                <label for="fname"><font color='white'>Song Name</font></label>
+                <input type="text" name="name" class="add-input" placeholder="Name.." required>
+
+                <label for="lname"><font color='white'>Singer</font></label>
+                <input type="text" id="lname" name="singer" class="add-input" placeholder="Singer..">
+
+                <label for="country"><font color='white'>Category</font></label>
+                <select id="category" name="category" class="add-input">
+                  <option value="">Choose category</option>
+                  <option value="1">Sad</option>
+                  <option value="2">Happy</option>
+                </select>
+
+                <input type="file" id="musicFile" name="musicFile" class="add-input" accept=".mp3" required>
+
+              
+                <div class="ms_view_more text-center">
+                    <!-- <button class="ms_btn" type="submit">Add</a> -->
+                    <button class="button button1" style="background-color: #555555;">ADD</button>
+                </div>
+
+              </form>
+            </div>
+                        
         </div>
-        <div class="ms_view_more padder_bottom20 padder_top50 text-center">
-            <a href="javascript:;" class="ms_btn">Add</a>
-        </div>
+        
         
     </div>
 </div>

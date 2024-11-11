@@ -51,6 +51,32 @@ function encode($str)
     return $return;
 }
 
+function getRandomString($n) {
+    return bin2hex(random_bytes($n / 2));
+}
+
+function musicDuration($time = false)
+{
+
+    if ($time == false) {
+        return "-";
+    } else {
+        // Split the time string into hours, minutes, and seconds
+        list($hours, $minutes, $seconds) = explode(":", $time);
+
+        // Convert hours to minutes and add to the minutes
+        $totalMinutes = ($hours * 60) + $minutes;
+
+        // Format minutes and seconds (removing leading zero from minutes)
+        $formattedTime = $totalMinutes . ':' . str_pad($seconds, 2, '0', STR_PAD_LEFT);
+
+        // Output result
+        return $formattedTime;
+    }
+
+    
+}
+
 /*
 function display_current_dt()
 {
@@ -127,9 +153,7 @@ function get_any_table_array($data_where = false, $table = false, $col_sort = fa
     }
 }
 
-function getRandomString($n) {
-    return bin2hex(random_bytes($n / 2));
-}
+
 
 function get_keytab_value($key)
 {

@@ -22,14 +22,14 @@
 
 							<form class="form w-100" action="<?= base_url('login');?>" method="POST">
 								<!--begin::Heading-->
-								<div class="text-center mb-11">
+								<!-- <div class="text-center mb-11"> -->
 									<!--begin::Title-->
-									<h1 class="text-white fw-bolder mb-3">MoodZic</h1>
-								</div>
+									<!-- <h1 class="text-white fw-bolder mb-3">MoodZic</h1> -->
+								<!-- </div> -->
 								<!--begin::Heading-->
 								<!--begin::Separator-->
-								<div class="separator separator-content my-14">
-									<img alt="Logo" src="<?php echo base_url(); ?>/assets/media/auth/music-logo-2.png" width="120px;" />
+								<div class="separator separator-content my-16">
+									<img alt="Logo" src="<?php echo base_url(); ?>/assets/media/auth/mood.png" width="190px;" />
 								</div>
 								<!--end::Separator-->
 
