@@ -77,6 +77,29 @@ function musicDuration($time = false)
     
 }
 
+function get_any_table_array($data_where = false, $table = false, $col_sort = false, $type_sort = false)
+{
+    $ci = load_instance();
+    $ci->load->database();
+
+    $ci->db->select('*');
+    if($data_where <> false){
+        $ci->db->where($data_where);
+    }
+    
+    if ($col_sort <> false) {
+        $sort = ($type_sort == false) ? "desc" : $type_sort;
+        $ci->db->order_by($col_sort, $sort);
+    }
+    $query = $ci->db->get($table);
+
+    if ($query->num_rows() > 0) {
+        return $query->result_array();
+    } else {
+        return false;
+    }
+}
+
 /*
 function display_current_dt()
 {
@@ -86,21 +109,21 @@ function display_current_dt()
 
 function update_any_table($data_upd, $data_where, $table)
 {
-    $tco = load_instance();
-    $tco->load->database();
+    $ci = load_instance();
+    $ci->load->database();
 
-    $tco->db->set($data_upd);
-    $tco->db->where($data_where);
-    $tco->db->update($table);
-    return $tco->db->affected_rows();
+    $ci->db->set($data_upd);
+    $ci->db->where($data_where);
+    $ci->db->update($table);
+    return $ci->db->affected_rows();
 }
 
 function delete_any_table($where, $table)
 {
-    $tco = load_instance();
-    $tco->load->database();
-    $tco->db->delete($table, $where);
-    return $tco->db->affected_rows();
+    $ci = load_instance();
+    $ci->load->database();
+    $ci->db->delete($table, $where);
+    return $ci->db->affected_rows();
 }
 
 
@@ -130,35 +153,14 @@ function view_profile_picture($data)
     }
 }
 
-function get_any_table_array($data_where = false, $table = false, $col_sort = false, $type_sort = false)
-{
-    $tco = load_instance();
-    $tco->load->database();
 
-    $tco->db->select('*');
-    if($data_where <> false){
-        $tco->db->where($data_where);
-    }
-    
-    if ($col_sort <> false) {
-        $sort = ($type_sort == false) ? "desc" : $type_sort;
-        $tco->db->order_by($col_sort, $sort);
-    }
-    $query = $tco->db->get($table);
-
-    if ($query->num_rows() > 0) {
-        return $query->result_array();
-    } else {
-        return false;
-    }
-}
 
 
 
 function get_keytab_value($key)
 {
-    $tco = load_instance();
-    $tco->load->database();
+    $ci = load_instance();
+    $ci->load->database();
 
     $tco->db->select('*');
     $tco->db->where(array('type' => $key));
