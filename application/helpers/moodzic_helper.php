@@ -100,13 +100,6 @@ function get_any_table_array($data_where = false, $table = false, $col_sort = fa
     }
 }
 
-/*
-function display_current_dt()
-{
-    $now = date('d F Y');
-    return $now;
-}
-
 function update_any_table($data_upd, $data_where, $table)
 {
     $ci = load_instance();
@@ -117,6 +110,15 @@ function update_any_table($data_upd, $data_where, $table)
     $ci->db->update($table);
     return $ci->db->affected_rows();
 }
+
+/*
+function display_current_dt()
+{
+    $now = date('d F Y');
+    return $now;
+}
+
+
 
 function delete_any_table($where, $table)
 {

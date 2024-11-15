@@ -13,13 +13,13 @@
         </div>
         <div class="ms_top_right">
             <div class="ms_pro_inner">                        
-                <div class="ms_pro_img"> <img src="https://dummyimage.com/50x50" alt="Profile"></div>
+                <!-- <div class="ms_pro_img"> <img src="https://dummyimage.com/50x50" alt="Profile"></div> -->
                 <div class="ms_pro_namewrap">
-                    <span class="pro_name">Hello, David</span> <i class="fa fa-caret-down"></i>
+                    <span class="pro_name">Hello, <?=$this->session->userdata('username')?></span> <i class="fa fa-caret-down"></i>
                 </div>
                 <ul class="ms_common_dropdown ms_profile_dropdown">
                     <li>
-                        <a href="javascript:void(0);">
+                        <a href="<?=base_url('profile')?>">
                             <span class="common_drop_icon drop_pro"></span>Profile
                         </a>
                     </li>

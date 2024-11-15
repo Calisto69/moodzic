@@ -1,5 +1,5 @@
 <head>
-    <title>Miraculous - Online Music Store Html Template</title>
+    <title>MoodZic</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta name="description" content="Music">
@@ -18,6 +18,9 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url();?>assetsmoods/css/dropzone.min.css">
     <!-- Favicon Link -->
     <link rel="shortcut icon" type="image/png" href="<?= base_url();?>assetsmoods/images/favicon.png">
+
+    <link href="<?= base_url();?>assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+
 
     <style>
         .add-input {

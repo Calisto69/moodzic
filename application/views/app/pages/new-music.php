@@ -32,7 +32,7 @@
               
                 <div class="ms_view_more text-center">
                     <!-- <button class="ms_btn" type="submit">Add</a> -->
-                    <button class="button button1" style="background-color: #555555;">ADD</button>
+                    <button class="button button1" style="background-color: #555555;">Add Music</button>
                 </div>
 
               </form>
