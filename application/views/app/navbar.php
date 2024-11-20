@@ -2,8 +2,8 @@
     <div class="ms_header_inner">
         <div class="ms_top_left">
             <div class="ms_top_search">
-                <input type="text" class="form-control" placeholder="Search for Song, Artists, Playlists and More...">
-                <span class="search_icon">
+                <input type="text" class="form-control" placeholder="Search for Song, Artists, Playlists and More..." id="searchInput">
+                <span class="search_icon" id="searchIcon">
                     <img src="<?= base_url(); ?>assetsmoods/images/svg/search.svg" alt="search">
                 </span>
             </div>

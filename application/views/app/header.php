@@ -20,8 +20,12 @@
     <link rel="shortcut icon" type="image/png" href="<?= base_url();?>assetsmoods/images/favicon.png">
 
     <link href="<?= base_url();?>assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+    <link href="<?= base_url();?>node_modules/izitoast/dist/css/iziToast.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<?= base_url();?>node_modules/izitoast/dist/css/iziToast.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="<?= base_url();?>assets/plugins/global/fontaww.bundle.css" rel="stylesheet" type="text/css"/>
+
+
     <style>
         #playMusicLink {
             cursor: pointer;
@@ -46,7 +50,7 @@
         }
         
         .button {
-          background-color: #04AA6D; /* Green */
+          background-color: #04AA6D;
           border: none;
           color: white;
           text-align: center;
@@ -57,10 +61,11 @@
           cursor: pointer;
         }
 
-        .button1 {padding: 10px 24px;}
+        .button1 {padding: 6px 24px;}
         .button1:hover {
           box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
         }
+
         .button1 {border-radius: 12px;}
 </style>
 

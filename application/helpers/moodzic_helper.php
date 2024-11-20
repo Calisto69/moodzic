@@ -111,6 +111,47 @@ function update_any_table($data_upd, $data_where, $table)
     return $ci->db->affected_rows();
 }
 
+function delete_any_table($where, $table)
+{
+    $ci = load_instance();
+    $ci->load->database();
+    $ci->db->delete($table, $where);
+    return $ci->db->affected_rows();
+}
+
+function count_music_by_user($id)
+{   
+    $ci = load_instance();
+    $ci->load->database();
+
+    $ci->db->select('*');
+    $ci->db->from('musics');
+    $ci->db->where('user_id', $id);
+    $query = $ci->db->get();
+
+    //if ($query->num_rows() > 0) {
+        $row_count = $query->num_rows();
+        return $row_count;
+    // } else {
+    //     return '0';
+    // }
+}
+
+function dmy($p_ymd, $p_sep = "/")
+{
+    $yy = substr($p_ymd, 0, 4);
+    $mm = substr($p_ymd, 5, 2);
+    $dd = substr($p_ymd, 8, 2);
+
+    $r_dmy = $dd . $p_sep . $mm . $p_sep . $yy;
+
+    if ($r_dmy == $p_sep . $p_sep or $r_dmy == "00" . $p_sep . "00" . $p_sep . "0000") {
+        $r_dmy = "";
+    }
+
+    return $r_dmy;
+}
+
 /*
 function display_current_dt()
 {
@@ -120,13 +161,7 @@ function display_current_dt()
 
 
 
-function delete_any_table($where, $table)
-{
-    $ci = load_instance();
-    $ci->load->database();
-    $ci->db->delete($table, $where);
-    return $ci->db->affected_rows();
-}
+
 
 
 function view_profile_picture($data)
@@ -164,9 +199,9 @@ function get_keytab_value($key)
     $ci = load_instance();
     $ci->load->database();
 
-    $tco->db->select('*');
-    $tco->db->where(array('type' => $key));
-    $query = $tco->db->get('keytab');
+    $ci->db->select('*');
+    $ci->db->where(array('type' => $key));
+    $query = $ci->db->get('keytab');
 
     if ($query->num_rows() > 0) {
         $result = $query->row();
@@ -179,11 +214,11 @@ function get_keytab_value($key)
 
 function update_keytab_value($key, $val)
 {
-    $tco = load_instance();
-    $tco->load->database();
+    $ci = load_instance();
+    $ci->load->database();
 
-    $tco->db->set(array('key_num' => $val + 1));
-    $tco->db->where(array('type' => $key));
+    $ci->db->set(array('key_num' => $val + 1));
+    $ci->db->where(array('type' => $key));
     $tco->db->update('keytab');
 
     return $tco->db->affected_rows();

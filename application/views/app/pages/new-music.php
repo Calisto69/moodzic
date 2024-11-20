@@ -21,7 +21,7 @@
                 <input type="text" id="lname" name="singer" class="add-input" placeholder="Artists..">
 
                 <label for="country"><font color='white'>Category</font></label>
-                <select id="category" name="category" class="add-input">
+                <select id="category" name="category" class="add-input" required>
                   <option value="">Choose category</option>
                   <option value="1">Sad</option>
                   <option value="2">Happy</option>
@@ -32,7 +32,7 @@
               
                 <div class="ms_view_more text-center">
                     <!-- <button class="ms_btn" type="submit">Add</a> -->
-                    <button class="button button1" style="background-color: #555555;">Add Music</button>
+                    <button class="button button1" style="background-color: #555555;"><font color='white'>Add Music</font></button>
                 </div>
 
               </form>

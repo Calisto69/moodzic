@@ -36,7 +36,13 @@ class Login extends CI_Controller {
 			$this->session->set_userdata($sess_data);
 			// print_r($sess_data); exit;
 
-			redirect('app');
+			if ($user_login['role'] == '1') {
+				redirect('app');
+			} else {
+				redirect('admin');
+			}
+
+			
 		}
 
 	}

@@ -3,10 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Newmusics extends CI_Controller {
 
+	function __construct()
+	{
+        parent::__construct();
+        $this->user_id = $this->session->userdata('user_id');
+	}
+
 	public function index()
 	{	
 		$data['content'] = 'app/pages/new-music'; 
-		$this->load->view('app/home', $data);	
+		$this->load->view('app/home', $data);
 	}
 
 	function upload($data=false)
@@ -69,6 +75,7 @@ class Newmusics extends CI_Controller {
                         'original_filename' => $file,
                         'path' => $config['upload_path'],
                         'duration' => $formatDuration,
+                        'user_id' => $this->user_id,
                 );
 
                 $insert = insert_any_table($data_insert, 'musics');

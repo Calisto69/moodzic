@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="ms_logo_mini">
-                <a href="<?= base_url('app')?>"><img src="https://dummyimage.com/42x43" alt="mini_logo" class="img-fluid"/></a>
+                <a href="<?= base_url('assetsmoods/images/mood.png')?>" alt="mini_logo" class="img-fluid"/></a>
             </div>
         </div>                
         <div class="ms_nav_wrapper"> 
