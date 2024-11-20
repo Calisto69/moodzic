@@ -25,7 +25,7 @@
         </div><!---Main Content end--->
 
         <!----Audio Player Section---->
-        <? $this->load->view('app/audio-player'); ?>
+        <? //$this->load->view('app/audio-player'); ?>
         
     </div>
 

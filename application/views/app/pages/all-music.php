@@ -120,7 +120,7 @@
                     </li>
                     <li>
                         <a href="javascript:;">
-                        <img src="<?= base_url();?>assetsmoods/images/loader.gif" alt="bar" class="img-fluid" width="30px;" style="display: none;" id="bar-play-<?=$key['id']?>">&nbsp;
+                        <img src="<?= base_url();?>assetsmoods/images/loader.gif" alt="bar" class="img-fluid fix-bar-class" width="30px;" style="display: none;" id="bar-play-<?=$key['id']?>">&nbsp;
                         <?= $key['name']?>
                         </a>
                     </li>

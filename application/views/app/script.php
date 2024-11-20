@@ -55,10 +55,18 @@
 	        var music_id = $(this).data('musicid');
 	        var icon     = document.getElementById("musicIcon-"+music_id);
 
+	        $(".fix-bar-class").hide();
+
+	        if (currentAudio == audio) {
+	        	alert ('s');
+	        }
+
 	        // If there's already a currently playing audio, pause it
 		    if (currentAudio && currentAudio !== audio) {
 		        currentAudio.pause();
-		        
+
+		        $("#bar-play-"+music_id).show();
+
 		    }
 
 	        // Check if the audio is already playing
