@@ -81,17 +81,49 @@
                 */?>
                 <? if($musics){ ?>
                 <? $no = 1; foreach ($musics as $key) { ?>
+                <?
+                $source_music = base_url() . $key['path'] . "/" . $key['filename'];
+                ?>
+
+                <?
+                /*
+                <button class="btn-play-the-music" data-init="audio1">Play Music</button>
+
+                <!-- Audio element -->
+                <audio id="audio1" src="path_to_your_music.mp3"></audio>
+
+                <button class="btn-play-the-music" data-init="audio1" data-musicid="1">
+                <i id="musicIcon-1" class="fas fa-play"></i> Play Music 1
+            </button>
+            <button class="btn-play-the-music" data-init="audio2" data-musicid="2">
+                <i id="musicIcon-2" class="fas fa-play"></i> Play Music 2
+            </button>
+            <button class="btn-play-the-music" data-init="audio3" data-musicid="3">
+                <i id="musicIcon-3" class="fas fa-play"></i> Play Music 3
+            </button>
+                */
+
+
+                ?>
                 <ul>
                     <li>
-                        <a href="javascript:;" class="dwld_sn">
+                        <a href="javascript:;" class="dwld_sn btn-play-the-music" data-init="audiomod-<?=$key['id']?>" data-musicid="<?=$key['id']?>">
+                        <?/*<audio id="audioPlayer" src="<?=$source_music?>" preload="auto"></audio> */?>
+                        <audio id="audiomod-<?=$key['id']?>" src="<?=$source_music?>" preload="auto"></audio>
                         <span class="play_no"><?= $no++ ?></span>
                         <span class="play_hover">
-                            <img src="<?= base_url();?>assetsmoods/images/svg/play_songlist.svg" alt="Play" class="img-fluid list_play">
-                            <img src="<?= base_url();?>assetsmoods/images/svg/sound_bars.svg" alt="bar" class="img-fluid list_play_bar">  
+                            <i id="musicIcon-<?=$key['id']?>" class="fas fa-play"></i>
+                            <?/*<img src="<?= base_url();?>assetsmoods/images/svg/play_songlist.svg" alt="Play" class="img-fluid list_play">
+                            <img src="<?= base_url();?>assetsmoods/images/svg/sound_bars.svg" alt="bar" class="img-fluid list_play_bar"> */?>
                         </span>
                         </a>
                     </li>
-                    <li><a href="javascript:;"><?= $key['name']?></a></li>
+                    <li>
+                        <a href="javascript:;">
+                        <img src="<?= base_url();?>assetsmoods/images/loader.gif" alt="bar" class="img-fluid" width="30px;" style="display: none;" id="bar-play-<?=$key['id']?>">&nbsp;
+                        <?= $key['name']?>
+                        </a>
+                    </li>
                     <!-- <li><a href="javascript:;">-</a></li> -->
                     <li class="text-center"><a href="javascript:;"><?=musicDuration($key['duration']);?></a></li>
                     <li class="text-center">
@@ -149,3 +181,17 @@
         
     </div>
 </div>
+
+<script type="text/javascript">
+    // document.getElementById("playMusicLink").addEventListener("click", function(event) {
+    //     // Prevent the default behavior of the link (which is navigating to a new page)
+    //     event.preventDefault();
+
+    //     // Get the audio element
+    //     var audio = document.getElementById("audioPlayer");
+
+    //     // Play the audio
+    //     audio.play();
+    // });
+
+</script>
