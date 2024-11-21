@@ -8,11 +8,12 @@ class Allmusic extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Music_model', 'DbMusic'); 
+        $this->user_id = $this->session->userdata('user_id');
 	}
 
 	public function index()
 	{			
-		$data['musics']  = $this->DbMusic->get_all_music();
+		$data['musics']  = $this->DbMusic->get_all_music($this->user_id);
 		$data['content'] = 'app/pages/all-music'; 
 		$this->load->view('app/home', $data);	
 		

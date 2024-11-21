@@ -17,6 +17,23 @@
 
 <script type="text/javascript">
 
+		<?php
+		  if ($this->session->flashdata('success_upload_music')) {
+		 		?>
+		 		
+	  		  	var msg = '<?php echo $this->session->flashdata('success_upload_music'); ?>';
+
+	          	iziToast.success({
+	                title: 'Success',
+	                message: msg,
+	                transitionIn: 'bounceInLeft',
+	                position: 'topRight',
+	            });
+			  	
+		    <?php
+		  }
+		  ?>
+
 		var currentAudio = null;
 
         $(document).on('click', '.btn-play-the-music', function(e){

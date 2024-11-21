@@ -9,9 +9,10 @@ class Music_model extends CI_Model {
         $this->musics = "musics";
     }
 
-    function get_all_music()
+    function get_all_music($user_id)
 	{
 		$this->db->select('*');
+        $this->db->where('user_id', $user_id);
         $query = $this->db->get($this->musics);
 
         // echo $this->db->last_query(); exit();

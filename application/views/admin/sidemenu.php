@@ -42,7 +42,7 @@
             <ul class="nav_downloads">
                 
                 
-                <li><a href="<?= base_url('favourite')?>" title="Favourites">
+                <li><a href="<?= base_url('admin/allMusics')?>" title="Favourites">
 				<span class="nav_icon">
 					<span class="icon icon_albums"></span>
 				</span>
@@ -52,6 +52,7 @@
 				</a>
                 </li>
 
+                <?/*
                 <li><a href="<?= base_url('favourite')?>" title="Favourites">
                 <span class="nav_icon">
                     <span class="icon icon_music"></span>
@@ -61,6 +62,7 @@
                 </span>
                 </a>
                 </li>
+                */?>
             
             </ul>
 

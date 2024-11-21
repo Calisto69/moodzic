@@ -103,5 +103,68 @@ class Admin extends CI_Controller {
 			echo encode(array('status' => 'success', 'msg' => 'Failed to delete.'));
 		}
 	}
+
+	function allMusics($data=false)
+	{
+		$data['musics']  = $this->DbAdmin->get_all_music();
+		$data['content'] = 'admin/pages/all-musics'; 
+		$this->load->view('admin/home', $data);	
+	}
+
+
+	public function profile($data=false)
+	{
+		// code...
+		$data['profile'] = get_any_table_row(array('id'=>$this->user_id), 'users');
+
+		$data['content'] = 'admin/pages/profile'; 
+		$this->load->view('admin/home', $data);	
+	}
+
+	function update($data=false)
+	{	
+		$post = $this->input->post();
+		// echo "<pre>"; print_r($post); echo "</pre>"; exit;
+
+
+		$check_username = get_any_table_row(array('username' => $post['username'], 'id !=' => $this->user_id), 'users');
+
+
+
+		if ($check_username == true) {
+			$response = array('status' => false , 'msg' => 'This username is already exist.');
+		} else {
+			$update = array(
+				'fullname' => $post['fullname'],
+				'username' => $post['username'],
+				'email'    => $post['email'],
+			);
+			
+
+			// print_r($update); exit;
+			$data_where = array('id' => $this->user_id);
+
+			update_any_table($update, $data_where, 'users');
+
+			$response = array('status' => true , 'msg' => 'Your profile has been updated.');
+		}
+
+		echo encode($response);
+	}
+
+
+	public function searchResults()
+	{	
+		$query = $this->input->post('query');
+		$data['musics']  = $this->DbAdmin->get_all_music_search_item($query);
+		$this->load->view('admin/pages/search-music', $data);
+	}
+
+
+
+
+
+
+
 	
 }

@@ -19,7 +19,7 @@
                 </div>
                 <ul class="ms_common_dropdown ms_profile_dropdown">
                     <li>
-                        <a href="<?=base_url('profile')?>">
+                        <a href="<?=base_url('admin/profile')?>">
                             <span class="common_drop_icon drop_pro"></span>Profile
                         </a>
                     </li>

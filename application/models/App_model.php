@@ -9,9 +9,10 @@ class App_model extends CI_Model {
         $this->musics = "musics";
     }
 
-    function playlist($category)
+    function playlist($category, $user_id)
 	{
 		$this->db->select('*');
+        $this->db->where('user_id', $user_id);
         if ($category <> 'ALL') {
             $this->db->where('category', $category);
         }

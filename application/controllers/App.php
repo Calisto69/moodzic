@@ -15,9 +15,9 @@ class App extends CI_Controller {
 	{	
 		$data['content'] = 'app/main-content';
 
-		$data['sads'] = $this->DbApp->playlist('1');
-		$data['happys'] = $this->DbApp->playlist('2');
-		$data['playlists'] = $this->DbApp->playlist('3');
+		$data['sads'] = $this->DbApp->playlist('1', $this->user_id);
+		$data['happys'] = $this->DbApp->playlist('2', $this->user_id);
+		$data['playlists'] = $this->DbApp->playlist('3', $this->user_id);
 
 		$data['music_player'] = get_any_table_array(array('user_id' => $this->user_id), 'musics');
 

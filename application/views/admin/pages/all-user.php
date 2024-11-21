@@ -12,7 +12,7 @@
                     <li>Name</li>
                     <li>Email</li>
                     <li>Created on</li>
-                    <li>Music Uploaded</li>
+                    <li>Total Music Uploaded</li>
                     <li>Action</li>
                 </ul>
  
@@ -21,7 +21,7 @@
                 <?
                 $total_music = count_music_by_user($key['id']);
                 ?>
-                <ul style="color: grey;">
+                <ul style="color: white;">
                     <li style="width: 1px;">
                         <?=$no++ ?>
                     </li>

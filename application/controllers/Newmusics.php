@@ -80,7 +80,11 @@ class Newmusics extends CI_Controller {
 
                 $insert = insert_any_table($data_insert, 'musics');
 
-                echo "success"; exit;
+                // echo "success"; exit;
+
+                $this->session->set_flashdata('success_upload_music', 'Music has been successfully uploaded');
+
+                redirect('newmusics');
 
 	            // Upload success
 	            // $data = array('upload_data' => $this->upload->data());

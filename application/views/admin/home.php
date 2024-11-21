@@ -19,7 +19,7 @@
 
 
             <!---index content--->
-            <div id="content-page-id">
+            <div id="content-page-id-admin">
                 <? $this->load->view($content); ?>
             </div>
 
@@ -74,12 +74,12 @@
                 $('.ms_loader').show();
 
                 $.ajax({
-                    url: base_url + 'search/searchResults', // Change with your controller method
+                    url: base_url + 'admin/searchResults', // Change with your controller method
                     type: 'POST',
                     data: { query: searchQuery }, // Pass the search query
                     success: function(response) {
                         $('.ms_loader').hide();
-                        $('#content-page-id').html(response);
+                        $('#content-page-id-admin').html(response);
                     },
                     error: function(xhr, status, error) {
                         $('.ms_loader').hide();
