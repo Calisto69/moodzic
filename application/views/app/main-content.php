@@ -44,8 +44,8 @@
                                                     <!-- pause_all -->
 
                                                     <!-- <span class="play_hover"><i id="musicIcon-<?=$happy['id']?>" class="fas fa-play"></i></span> -->
-                                                    
-                                                </div> 
+
+                                                </div>
                                             </a>
                                                 <div class="songslist_details">
                                                     <div class="songslist_thumb">
@@ -53,11 +53,11 @@
                                                         <img src="<?= base_url();?>assetsmoods/images/loader.gif" alt="bar" class="img-fluid fix-bar-class-happy" style="display:none;" width="30px;" id="bar-play-happy-<?=$happy['id']?>">
                                                     </div>
                                                     <div class="songslist_name">
-                                                        
+
                                                         <h3 class="song_name"><a href="javascript:void(0);"><?= $happy['name']?></a></h3>
                                                         <p class="song_artist"><?= $happy['singer']?></p>
-                                                    </div> 
-                                                </div> 
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <div class="ms_songslist_right">
@@ -126,8 +126,8 @@
                                                     <!-- pause_all -->
 
                                                     <!-- <span class="play_hover"><i id="musicIcon-<?=$sad['id']?>" class="fas fa-play"></i></span> -->
-                                                    
-                                                </div> 
+
+                                                </div>
                                             </a>
                                                 <div class="songslist_details">
                                                     <div class="songslist_thumb">
@@ -135,11 +135,11 @@
                                                         <img src="<?= base_url();?>assetsmoods/images/loader.gif" alt="bar" class="img-fluid fix-bar-class-sad" style="display:none;" width="30px;" id="bar-play-sad-<?=$sad['id']?>">
                                                     </div>
                                                     <div class="songslist_name">
-                                                        
+
                                                         <h3 class="song_name"><a href="javascript:void(0);"><?= $sad['name']?></a></h3>
                                                         <p class="song_artist"><?= $sad['singer']?></p>
-                                                    </div> 
-                                                </div> 
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <div class="ms_songslist_right">
@@ -208,8 +208,8 @@
                                                     <!-- pause_all -->
 
                                                     <!-- <span class="play_hover"><i id="musicIcon-<?=$playlist['id']?>" class="fas fa-play"></i></span> -->
-                                                    
-                                                </div> 
+
+                                                </div>
                                             </a>
                                                 <div class="songslist_details">
                                                     <div class="songslist_thumb">
@@ -217,11 +217,11 @@
                                                         <img src="<?= base_url();?>assetsmoods/images/loader.gif" alt="bar" class="img-fluid fix-bar-class-myp" style="display:none;" width="30px;" id="bar-play-myp-<?=$playlist['id']?>">
                                                     </div>
                                                     <div class="songslist_name">
-                                                        
+
                                                         <h3 class="song_name"><a href="javascript:void(0);"><?= $playlist['name']?></a></h3>
                                                         <p class="song_artist"><?= $playlist['singer']?></p>
-                                                    </div> 
-                                                </div> 
+                                                    </div>
+                                                </div>
 
                                             </div>
                                             <div class="ms_songslist_right">
@@ -263,6 +263,6 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>

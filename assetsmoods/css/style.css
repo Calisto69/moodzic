@@ -1,23 +1,23 @@
-/*--------------------- Copyright (c) 2018 ----------------------- 
-[Master Stylesheet] 
-Project: Miraculous - Online Music Store Html Template 
-Version: 1.0.0 
+/*--------------------- Copyright (c) 2018 -----------------------
+[Master Stylesheet]
+Project: Miraculous - Online Music Store Html Template
+Version: 1.0.0
 Author: Kamleshyadav
- ------------------------------------------------------------------- 
-[Table of contents] 
-1. Body 
-2. Normal Css 
-3. Loader Css 
+ -------------------------------------------------------------------
+[Table of contents]
+1. Body
+2. Normal Css
+3. Loader Css
 4. Sidebar Css
 5. Header Css
-6. Banner Css 
-7. Index page Css 
-8. Player Css 
-9. Artist Page Css 
-10. Music Page Css 
-10. Download Page Css 
-12. History Page Css 
-13. Media  Css 
+6. Banner Css
+7. Index page Css
+8. Player Css
+9. Artist Page Css
+10. Music Page Css
+10. Download Page Css
+12. History Page Css
+13. Media  Css
 
 -------------------------------------------------------------------*/
 /*====Body Css Start====*/
@@ -602,6 +602,13 @@ body.loaded .ms_loader {
 .ms_nav_wrapper span.nav_icon>.icon.icon_history {
 	background-position: -403px 2px;
 }
+.ms_nav_wrapper span.nav_icon>.icon.icon_face {
+    background-position: -403px 2px;
+}
+
+.ms_nav_wrapper ul li a:hover span.nav_icon>.icon.icon_face, .ms_nav_wrapper ul li a.active span.nav_icon>.icon.icon_face {
+    background-position: -403px -32px;
+}
 
 .ms_nav_wrapper ul li a:hover span.nav_icon>.icon.icon_discover, .ms_nav_wrapper ul li a.active span.nav_icon>.icon.icon_discover {
     background-position: 0px -34px;
@@ -631,10 +638,9 @@ body.loaded .ms_loader {
     background-position: -403px -32px;
 }
 
-
 /*====page section Css Start====*/
 .ms_content_wrapper {
-	margin-left: 225px;	
+	margin-left: 225px;
 	transition: all 0.3s ease;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -740,11 +746,11 @@ body.loaded .ms_loader {
 	color: #33455a;
 	opacity: 1; /* Firefox */
   }
-  
+
   .ms_top_search .form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
 	color: #33455a;
   }
-  
+
   .ms_top_search .form-control::-ms-input-placeholder { /* Microsoft Edge */
 	color: #33455a;
   }
@@ -783,7 +789,7 @@ body.loaded .ms_loader {
 .ms_pro_namewrap {
     color: #828b97;
 }
-.ms_pro_namewrap .pro_name {    
+.ms_pro_namewrap .pro_name {
 	margin-left: 10px;
 	margin-right: 5px;
 }
@@ -806,8 +812,8 @@ body.loaded .ms_loader {
     background-position: -1391px -34px;
 }
 .ms_common_dropdown {
-    position: absolute;    
-    width: max-content;    
+    position: absolute;
+    width: max-content;
     background-color: rgb(25, 38, 56);
 	box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.2);
 	padding: 21px 0;
@@ -897,7 +903,7 @@ body.loaded .ms_loader {
 	font-weight: 500;
 	margin-right: 45px;
 	position: relative;
-	padding-bottom: 13px;	
+	padding-bottom: 13px;
 	display: inline-block;
 }
 .ms_songslist_nav > li > a.active {
@@ -984,7 +990,7 @@ body.loaded .ms_loader {
     background-image: -ms-linear-gradient( 134deg, rgb(18,34,55) 0%, rgb(12,27,44) 100%);
 	box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.12);
 	margin-right: 25px;
-	
+
 }
 .songslist_thumb >img {
     width: 50px;
@@ -1309,7 +1315,7 @@ span.play-left-arrow {
 	-o-transform: translateX(-10%);
 }
 .play_song_options ul li {
-	
+
 }
 .play_song_options ul li a {
 	color: #fff;
@@ -2384,7 +2390,7 @@ ul.more_option li a:hover .opt_icon .icon_share {
 .music_center_title {
     font-size: 22px;
     color: #fff;
-    font-weight: 700;	
+    font-weight: 700;
 }
 .music_center_sub {
     color: #fff;
@@ -2593,17 +2599,17 @@ ul.album_list_name > li {
 .album_list_wrapper::-webkit-scrollbar {
 	width: 3px;
 	height: 3px;
-  }  
+  }
   /* Track */
   .album_list_wrapper::-webkit-scrollbar-track {
 	background: rgb(255 255 255 / 0.10);
   }
-  
+
   /* Handle */
   .album_list_wrapper::-webkit-scrollbar-thumb {
 	background:var(--theme-color);
   }
-  
+
 /*====History Css Start====*/
 .ms_history_wrapper .slider_cbox {
     margin: 10px;
@@ -2902,7 +2908,7 @@ p.singer_name{
 		margin-top: 10px;
 	}
 	.jp-track-name {
-		padding-right: 0; 
+		padding-right: 0;
 		flex-direction: column;
 		text-align: center;
 	}
@@ -2933,7 +2939,7 @@ p.singer_name{
 		border-right: 0;
 		padding: 0;
 	}
-	
+
 
 }
 @media(min-width:1200px) {
@@ -2943,7 +2949,7 @@ p.singer_name{
 		height: 100vh;
 		background-size: contain;
 	}
-	
+
 }
 @media(min-width:992px) {
 	/* close sidebar css */
@@ -2997,7 +3003,7 @@ p.singer_name{
 
 }
 @media(min-width:1400px) {
-	
+
 	.ms_music_row {
 		display: flex;
 	}
@@ -3011,7 +3017,7 @@ p.singer_name{
 	}
 }
 @media(max-width:1399px) {
-	
+
 }
 @media(max-width:1199px) {
 	.ms_top_search {
@@ -3063,7 +3069,7 @@ p.singer_name{
 	}
 	.ms_header {
 		left: 0;
-	}	
+	}
 	.ms_header_inner {
 		padding: 26px 15px;
 	}
@@ -3079,8 +3085,8 @@ p.singer_name{
 	.common_pages_space {
 		padding: 106px 15px 0 15px;
 	}
-	
-	
+
+
 }
 @media(max-width:767px) {
 	.ms_top_search {
@@ -3115,8 +3121,8 @@ p.singer_name{
 	}
 	.album_single_text {
 		padding: 15px 0 0 0px;
-	}	
-	
+	}
+
 }
 @media(max-width:575px) {
 	.ms_songslist_inner {
@@ -3132,10 +3138,10 @@ p.singer_name{
 		margin-right: 16px;
 	}
 	.ms_top_search .form-control {
-	
+
 		font-size: 12px;
 		padding: 0 50px 0 15px;
-	
+
 	}
 }
 @media(max-width:420px) {

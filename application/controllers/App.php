@@ -7,12 +7,12 @@ class App extends CI_Controller {
 	{
         parent::__construct();
 
-        $this->load->model('App_model', 'DbApp'); 
+        $this->load->model('App_model', 'DbApp');
         $this->user_id = $this->session->userdata('user_id');
 	}
 
 	public function index()
-	{	
+	{
 		$data['content'] = 'app/main-content';
 
 		$data['sads'] = $this->DbApp->playlist('1', $this->user_id);
@@ -24,6 +24,4 @@ class App extends CI_Controller {
 
 		$this->load->view('app/home', $data);
 	}
-
-	
 }

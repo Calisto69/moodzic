@@ -30,13 +30,14 @@ Assigned to: Theme Forest
             this.alsolike_Slider2();
             this.Menu();
             this.Player_close();
-            this.More();            
+            this.More();
             this.showPlayList();
             this.volume();
+            this.initEmotionDetection();
         },
         /*-------------- Music Functions definition ---------------------------------------------------
         ---------------------------------------------------------------------------------------------------*/
-        
+
         /*-----------------------------------------------------
 		RTL
 		-----------------------------------------------------*/
@@ -54,7 +55,7 @@ Assigned to: Theme Forest
 				$(document).on('click','.ms_pro_inner ',function(){
                     $(this).toggleClass('show')
                 })
-                    
+
                 // outside remove click
                 $(document).on('click',function(e){
                     if(!$(e.target).closest('.ms_pro_inner').length){
@@ -84,7 +85,7 @@ Assigned to: Theme Forest
                $('.artist-single-option').toggleClass('open');
             });
 
-        },        
+        },
         // Trending Artist  Slider
         Trending_Slider: function() {
             var swiper = new Swiper('.trending_artist_slider .swiper-container', {
@@ -370,7 +371,7 @@ Assigned to: Theme Forest
                 slidesPerView: 'auto',
                 loop:true,
                 speed:600,
-                autoplay:false, 
+                autoplay:false,
                 autoplay: {
                     delay: 2500,
                     disableOnInteraction: false,
@@ -387,7 +388,7 @@ Assigned to: Theme Forest
                     prevEl: '.swiper-music-prev',
                 },
                 breakpoints: {
-                    
+
                     575: {
                         coverflowEffect: {
                             stretch: 300,
@@ -417,16 +418,16 @@ Assigned to: Theme Forest
                         coverflowEffect: {
                             stretch: 500,
                         },
-                    }, 
+                    },
                     1399: {
                         coverflowEffect: {
                             stretch: 700,
                         },
-                    }, 
+                    },
                 }
             });
         },
-        
+
         // Toggle Menu
         Menu: function() {
             $(".ms_cmenu_toggle").on('click', function() {
@@ -444,7 +445,7 @@ Assigned to: Theme Forest
                 $("body").toggleClass("main_class")
             })
         },
-        
+
         // Queue
         More: function() {
             $(document).on('click', '#playlist-wrap ul li .action .que_more', function(e) {
@@ -476,40 +477,45 @@ Assigned to: Theme Forest
             });
         },
 
-        // Volume 
+        // Volume
         volume: function() {
             $(".knob-mask .knob").css("transform", "rotateZ(270deg)");
             $(".knob-mask .handle").css("transform", "rotateZ(270deg)");
 
+        },
+        initEmotionDetection: function() {
+            if($('.emotion_detection_wrapper').length > 0) {
+                // Emotion detection is already initialized by emotion-detection.js
+            }
         }
 
     };
     $(document).ready(function() {
         music.init();
-		
+
 		// Scrollbar
 		$(".ms_nav_wrapper").mCustomScrollbar({
 			theme:"minimal"
         });
-        
+
         // Song list Scrollbar
 		$(".ms_songslist_wrap .ms_songslist_box").mCustomScrollbar({
             theme:"minimal",
             setHeight:610
         });
-        
+
         // music list Scrollbar
 		$(".music_listwrap").mCustomScrollbar({
             theme:"minimal",
             setHeight:350
 		});
-		
+
 		// Queue Scrollbar
 		$(".jp_queue_list_inner").mCustomScrollbar({
 			theme:"minimal",
 			setHeight:345
         });
-        
+
     });
     // Preloader Js
     jQuery(window).on('load', function() {
@@ -521,7 +527,7 @@ Assigned to: Theme Forest
             $('.jp-playlist').addClass('find_li');
         }
     });
-    $(window).scroll(function() {    
+    $(window).scroll(function() {
         var scroll = $(window).scrollTop()
         if (scroll >= 5) {
             $(".ms_header").addClass("dark_header");
@@ -533,4 +539,3 @@ Assigned to: Theme Forest
         $('.ms_btn.play_btn').toggleClass('btn_pause');
     });
 })(jQuery);
-

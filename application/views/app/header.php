@@ -48,7 +48,7 @@
           background-color: #101F33;
           padding: 20px;
         }
-        
+
         .button {
           background-color: #04AA6D;
           border: none;
@@ -67,7 +67,7 @@
         }
 
         .button1 {border-radius: 12px;}
-</style>
+    </style>
 
 
 </head>
