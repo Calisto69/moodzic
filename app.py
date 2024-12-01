@@ -59,8 +59,8 @@ def recommend_songs(mood, num_songs=5):
         cursor = connection.cursor(dictionary=True)
         # Map mood to category (1: Happy, 2: Sad, 3: Energetic, 4: Calm)
         mood_to_category = {
-            'Happy': 1,
-            'Sad': 2,
+            'Sad': 1,
+            'Happy': 2,
             'Energetic': 3,
             'Calm': 4
         }
@@ -68,7 +68,8 @@ def recommend_songs(mood, num_songs=5):
         category = mood_to_category.get(mood, 1)  # Default to Happy if mood not found
         
         query = """
-            SELECT name, singer as artists
+            SELECT name, singer as artists, 
+                   CONCAT('http://localhost/moodzic/uploads/musics/', filename) as file_url
             FROM musics 
             WHERE category = %s
             ORDER BY RAND() 
@@ -82,6 +83,9 @@ def recommend_songs(mood, num_songs=5):
         
         if not songs:
             return [{'name': 'No songs available', 'artists': ''}]
+        
+        # Print the whole data
+        print(songs)
         return songs
         
     except Error as e:

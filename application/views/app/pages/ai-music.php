@@ -61,11 +61,56 @@
                     border-radius: 8px;
                     margin-bottom: 10px;
                     transition: transform 0.2s;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
 
                 .song-item:hover {
                     transform: translateX(5px);
                     background: #e3f2fd;
+                }
+
+                .song-info {
+                    flex: 1;
+                }
+
+                .audio-controls {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                .play-btn {
+                    background: #4CAF50;
+                    color: white;
+                    border: none;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .play-btn:hover {
+                    background: #45a049;
+                }
+
+                .song-progress {
+                    width: 100px;
+                    height: 4px;
+                    background: #ddd;
+                    border-radius: 2px;
+                    cursor: pointer;
+                }
+
+                .song-progress-fill {
+                    height: 100%;
+                    background: #4CAF50;
+                    border-radius: 2px;
+                    width: 0%;
                 }
 
                 .song-name {
@@ -207,6 +252,8 @@
                     const videoIframe = document.getElementById('video-iframe');
                     const detectionIframe = document.getElementById('detection-iframe');
                     let detectionActive = false;
+                    let currentAudio = null;
+                    let currentButton = null;
 
                     function resetVideoFeed() {
                         videoIframe.classList.remove('active');
@@ -214,6 +261,49 @@
                         detectionActive = false;
                         startBtn.disabled = false;
                         startBtn.textContent = 'Start Detection';
+                    }
+
+                    function togglePlay(button, url) {
+                        if (currentAudio && currentAudio.src === url) {
+                            if (currentAudio.paused) {
+                                currentAudio.play();
+                                button.innerHTML = '<i class="fa fa-pause"></i>';
+                            } else {
+                                currentAudio.pause();
+                                button.innerHTML = '<i class="fa fa-play"></i>';
+                            }
+                        } else {
+                            if (currentAudio) {
+                                currentAudio.pause();
+                                currentButton.innerHTML = '<i class="fa fa-play"></i>';
+                            }
+                            currentAudio = new Audio(url);
+                            currentButton = button;
+                            
+                            currentAudio.onerror = () => {
+                                console.error('Error loading audio file:', url);
+                                button.innerHTML = '<i class="fa fa-exclamation-triangle"></i>';
+                                button.style.background = '#dc3545';
+                            };
+
+                            currentAudio.play().catch(error => {
+                                console.error('Error playing audio:', error);
+                                button.innerHTML = '<i class="fa fa-exclamation-triangle"></i>';
+                                button.style.background = '#dc3545';
+                            });
+                            
+                            button.innerHTML = '<i class="fa fa-pause"></i>';
+
+                            currentAudio.addEventListener('ended', () => {
+                                button.innerHTML = '<i class="fa fa-play"></i>';
+                            });
+
+                            currentAudio.addEventListener('timeupdate', () => {
+                                const progress = button.parentElement.querySelector('.song-progress-fill');
+                                const percent = (currentAudio.currentTime / currentAudio.duration) * 100;
+                                progress.style.width = percent + '%';
+                            });
+                        }
                     }
 
                     startBtn.addEventListener('click', async () => {
@@ -255,8 +345,18 @@
                                         data.recommendations.forEach(song => {
                                             songsList.innerHTML += `
                                                 <div class="song-item">
-                                                    <div class="song-name">${song.name}</div>
-                                                    <div class="song-artist">${song.artists}</div>
+                                                    <div class="song-info">
+                                                        <div class="song-name">${song.name}</div>
+                                                        <div class="song-artist">${song.artists}</div>
+                                                    </div>
+                                                    <div class="audio-controls">
+                                                        <button class="play-btn" onclick="togglePlay(this, '${song.file_url}')">
+                                                            <i class="fa fa-play"></i>
+                                                        </button>
+                                                        <div class="song-progress">
+                                                            <div class="song-progress-fill"></div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             `;
                                         });
